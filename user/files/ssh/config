@@ -1,0 +1,7 @@
+Include ~/.ssh/config.d/*
+
+Host *
+  Controlmaster auto
+  Controlpath ${TMPDIR}/ssh-%r@%h:%p
+
+
