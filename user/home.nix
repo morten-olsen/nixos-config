@@ -25,6 +25,8 @@ in {
     pkgs.spotify
     pkgs.slack
     pkgs.rustup
+    pkgs.bitwarden
+    pkgs.bitwarden-cli
     pkgs.silver-searcher
     pkgs.ncspot
     pkgs.ripgrep
@@ -34,9 +36,12 @@ in {
     pkgs.gnumake
     pkgs.gcc
     pkgs.terraform
+    pkgs.darktable
+    pkgs.rawtherapee
     pkgs.signal-desktop
     pkgs.nodePackages.pnpm
     pkgs.nodePackages.yarn
+    pkgs.nodePackages.yo
     pkgs.steam-run
     pkgs.python3
     pkgs.gimp
@@ -138,5 +143,22 @@ in {
       (import ./overlays/steam.nix)
     ];
 
+  };
+
+
+  systemd.user.services.protonmail-bridge = {
+    Unit = {
+      Description = "Protonmail Bridge";
+      After = [ "network.target" ];
+    };
+
+    Service = {
+      Restart = "always";
+      ExecStart = "${pkgs.protonmail-bridge}/bin/protonmail-bridge --no-window --noninteractive";
+    };
+
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
   };
 }

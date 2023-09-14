@@ -1,5 +1,6 @@
 # https://github.com/michaelpj/nixos-config 
 # https://github.com/HeinzDev/Hyprland-dotfiles/blob/main/nixos/configuration.nix
+# https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/
 {
   inputs = {
     nixpkgs = {
