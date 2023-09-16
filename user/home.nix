@@ -14,9 +14,6 @@
   home.packages = [
     pkgs.spotify
     pkgs.slack
-    pkgs.bitwarden
-    pkgs.ncspot
-    pkgs.terraform
     pkgs.darktable
     pkgs.rawtherapee
     pkgs.signal-desktop

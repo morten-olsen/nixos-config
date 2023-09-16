@@ -2,20 +2,19 @@
 
 {
   imports = [
+    ../fzf
+    ../direnv
+    ../gh
     ../tmux
     ../ssh
     ../git
     ../neovim
+    ../bat
   ];
   home.packages = [
     pkgs.eza
-    pkgs.bat
-    pkgs.fzf
     pkgs.fd
     pkgs.curl
-    pkgs.jq
-    pkgs.rustup
-    pkgs.bitwarden-cli
     pkgs.silver-searcher
     pkgs.ripgrep
     pkgs.thefuck
@@ -27,12 +26,14 @@
     pkgs.nodePackages.yarn
     pkgs.nodePackages.yo
     pkgs.python3
-    pkgs.gh
     pkgs.binutils
     pkgs.pkg-config
   ];
 
+  programs.jq.enable = true;
   programs.zsh.enable = true;
+  programs.yt-dlp.enable = true;
+
   home.file = {
     ".env".source = ./files/env;
     ".zshrc".source = ./files/zshrc;
