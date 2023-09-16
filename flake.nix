@@ -12,13 +12,15 @@
     home-manager = {
       url = "github:nix-community/home-manager";
     };
+    nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager }: {
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, nur}: {
     nixosConfigurations = {
       alice-xps = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ 
+          { nixpkgs.overlays = [ nur.overlay ]; }
           (import ./machines/xps/configuration.nix) 
           ({
               # Let 'nixos-version --json' know about the Git revision
