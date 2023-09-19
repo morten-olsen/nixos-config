@@ -34,9 +34,9 @@
           react-devtools
           reduxdevtools
           hoppscotch
-          bitwarden
           grammarly
           vimium
+          onepassword-password-manager
         ];
       };
     };

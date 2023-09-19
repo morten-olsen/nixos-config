@@ -15,6 +15,10 @@
     xkbOptions = "caps:swapescape";
   };
 
+  environment.systemPackages = [
+    pkgs.wl-clipboard
+  ];
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
   fonts = {

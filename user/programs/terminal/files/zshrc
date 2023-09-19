@@ -32,9 +32,6 @@ if [ -d $HOME/.shellrc/rc.d ]; then
   for file in $HOME/.shellrc/rc.d/*.sh; do
     source $file
   done
-  for file in $HOME/.shellrc/rc.d/*.zsh; do
-    source $file
-  done
 fi
 
 # Load all files from .shell/zshrc.d directory
@@ -46,6 +43,10 @@ fi
 export GPG_TTY=$(tty)
 if [[ -n "$SSH_CONNECTION" ]] ;then
   export PINENTRY_USER_DATA="USE_CURSES=1"
+fi
+
+if [ -f $HOME/.systemrc ]; then
+  source $HOME/.systemrc
 fi
 
 

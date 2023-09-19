@@ -11,6 +11,9 @@ let
   };
 in {
   programs.neovim.enable = true;
+  home.packages = [
+    pkgs.marksman
+  ];
   home.file = {
     ".config/nvim" = {
       source = astronvim;
