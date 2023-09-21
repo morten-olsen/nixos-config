@@ -4,6 +4,7 @@
   imports = [
     ./locales.nix
     ./nix.nix
+    ./network.nix
     ./security.nix
   ];
 
