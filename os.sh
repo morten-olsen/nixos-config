@@ -1,4 +1,13 @@
 
+function help() {
+  echo "Usage: $0 {apply|upgrade|init} [name]"
+  exit 1
+}
+
+if [ -z "$1" ]; then
+  help
+fi
+
 ACTION=$1; shift
 LOCATION=$PWD
 
@@ -14,6 +23,8 @@ function apply() {
 function upgrade() {
   if git -C "$LOCATION" diff-index --quiet HEAD --; then
     nix flake update --commit-lock-file "$LOCATION"
+    apply $1
+    cleanup
   else
     echo "Error: git working tree is dirty"
     exit 1
@@ -21,18 +32,32 @@ function upgrade() {
 }
 
 function cleanup() {
+  amount=${1:-"7d"}
+  nix-env --delete-generations "$amount"
   nix-collect-garbage -d
-  nixos-store --optimise
+  nix-store --optimise
+  nix-store --verify --check-contents --repair
+}
+
+function init() {
+  mkdir -p "$LOCATION"
+  git clone "https://github.com/morten-olsen/home-server.git" "$LOCATION"
 }
 
 case $ACTION in
+  init)
+    init $1
+    ;;
   apply)
     apply $1
     ;;
   upgrade)
     upgrade $1
     ;;
+  cleanup)
+    cleanup $1
+    ;;
   *)
-    echo "Usage: $0 {apply}"
-    exit 1
+    help
+    ;;
 esac
