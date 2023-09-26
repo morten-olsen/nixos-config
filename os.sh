@@ -20,6 +20,11 @@ function apply() {
   fi
 }
 
+function buildvm() {
+  nixos-rebuild build-vm --flake "$LOCATION#vm"
+  "$LOCATION/result/bin/run-test-vm-vm"
+}
+
 function upgrade() {
   if git -C "$LOCATION" diff-index --quiet HEAD --; then
     nix flake update --commit-lock-file "$LOCATION"
@@ -53,6 +58,9 @@ case $ACTION in
     ;;
   upgrade)
     upgrade $1
+    ;;
+  build-vm)
+    buildvm $1
     ;;
   cleanup)
     cleanup $1

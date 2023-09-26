@@ -5,10 +5,15 @@
   home.homeDirectory = "/home/alice";
 
   imports = [
+    ./dconf.nix
     ./programs/terminal
     ./programs/kitty
     ./programs/firefox
   ];
+
+  home.file = {
+    ".wallpaper.jpg".source = ./wallpaper.jpg; 
+  };
 
   home.stateVersion = "23.11";
   home.packages = [
