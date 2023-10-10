@@ -28,6 +28,7 @@
     pkgs.python3
     pkgs.binutils
     pkgs.pkg-config
+    pkgs.marksman
   ];
 
   programs.jq.enable = true;
