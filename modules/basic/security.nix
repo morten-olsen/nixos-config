@@ -24,4 +24,6 @@
     pkgs.gnupg
     pkgs.pinentry-gnome
   ];
+
+  networking.firewall.checkReversePath = false; 
 }

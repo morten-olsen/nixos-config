@@ -21,19 +21,30 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.initrd.availableKernelModules = [
+    "aesni_intel"
+    "cryptd"
+  ];
+
   # Setup keyfile
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
   };
 
-  # Enable swap on luks
-  boot.initrd.luks.devices."luks-20428df9-98ee-45a6-9dc1-fcafc0ce86f2".device = "/dev/disk/by-uuid/20428df9-98ee-45a6-9dc1-fcafc0ce86f2";
-  boot.initrd.luks.devices."luks-20428df9-98ee-45a6-9dc1-fcafc0ce86f2".keyFile = "/crypto_keyfile.bin";
-
   boot.kernelParams = [ "i915.force_probe=9b41" ];
 
   networking.hostName = "alice-xps"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  system.autoUpgrade = {
+    enable = true;
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 
   system.stateVersion = "23.05"; # Did you read the comment?
 }

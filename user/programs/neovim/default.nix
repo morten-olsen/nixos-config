@@ -3,7 +3,7 @@
 let 
   astronvim = builtins.fetchGit {
     url = "https://github.com/AstroNvim/AstroNvim";
-    rev = "dad0bec1fef2833561d04ea446a544fbfde92539";
+    rev = "7f087b2ea45073be3386a29e805143f0a1f896e8";
   };
   astronvimUser = builtins.fetchGit {
     url = "https://foo:foo@github.com/morten-olsen/astrovim";

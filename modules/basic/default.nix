@@ -7,6 +7,9 @@
     ./network.nix
     ./security.nix
   ];
+  environment.systemPackages = [
+    pkgs.nfs-utils
+  ];
 
   services = {
     fwupd.enable = true;

@@ -29,7 +29,6 @@ function upgrade() {
   if git -C "$LOCATION" diff-index --quiet HEAD --; then
     nix flake update --commit-lock-file "$LOCATION"
     apply $1
-    cleanup
   else
     echo "Error: git working tree is dirty"
     exit 1

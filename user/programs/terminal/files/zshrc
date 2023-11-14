@@ -95,5 +95,7 @@ PRINT_CENTER 60 "
 "
 fi
 
+export PATH=~/.npm-global/bin:$PATH
+export NODE_PATH=~/.npm-global/lib/node_modules
 which wrk > /dev/null && eval `wrk tools bash`
 

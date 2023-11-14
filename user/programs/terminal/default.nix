@@ -39,6 +39,7 @@
     ".env".source = ./files/env;
     ".zshrc".source = ./files/zshrc;
     ".bashrc".source = ./files/bashrc;
+    # ".npmrc".source = ./files/npmrc;
     ".shellrc/rc.d" = {
       source = ./files/shell/rc.d;
     };
