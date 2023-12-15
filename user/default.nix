@@ -1,6 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   programs.zsh.enable = true;
   users.users.alice = {
     isNormalUser = true;

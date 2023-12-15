@@ -9,6 +9,7 @@
     ./programs/terminal
     ./programs/kitty
     ./programs/firefox
+    ./programs/vscode
   ];
 
   home.file = {
