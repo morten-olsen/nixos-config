@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs.zsh.enable = true;
   users.users.alice = {
@@ -11,6 +11,10 @@
     shell = pkgs.zsh;
   };
 
+networking.firewall = {
+  enable = true;
+  allowedTCPPorts = [ 8081 5001 ];
+};
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "1password-gui"

@@ -3,11 +3,11 @@
 let 
   astronvim = builtins.fetchGit {
     url = "https://github.com/AstroNvim/AstroNvim";
-    rev = "7f087b2ea45073be3386a29e805143f0a1f896e8";
+    rev = "ba0fbdf974eb63639e43d6467f7232929b8b9b4c";
   };
   astronvimUser = builtins.fetchGit {
     url = "https://foo:foo@github.com/morten-olsen/astrovim";
-    rev = "44b38567fe3adedd972b5b07f5883d47600a9078";
+    rev = "295278f715810a2917e0eb38c304cfc290e796d7";
   };
 in {
   programs.neovim.enable = true;

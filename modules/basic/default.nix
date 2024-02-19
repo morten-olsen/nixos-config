@@ -6,6 +6,7 @@
     ./nix.nix
     ./network.nix
     ./security.nix
+    ./udev.nix
   ];
   environment.systemPackages = [
     pkgs.nfs-utils
