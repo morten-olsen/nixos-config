@@ -3,6 +3,11 @@
 {
   # environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+  # ^ requested by obsidian
+
   programs.zsh.enable = true;
   users.users.alice = {
     isNormalUser = true;

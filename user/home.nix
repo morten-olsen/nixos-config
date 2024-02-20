@@ -10,6 +10,7 @@
     ./programs/kitty
     ./programs/firefox
     ./programs/vscode
+    ./programs/obsidian
   ];
 
   home.file = {
