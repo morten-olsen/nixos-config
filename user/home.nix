@@ -10,7 +10,6 @@
     ./programs/kitty
     ./programs/firefox
     ./programs/vscode
-    ./programs/obsidian
   ];
 
   home.file = {
@@ -27,6 +26,8 @@
     pkgs.gimp
     pkgs.blender
     pkgs.discord
+    pkgs.bun
+    pkgs.localsend
   ];
 
 

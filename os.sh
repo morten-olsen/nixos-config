@@ -27,7 +27,7 @@ function buildvm() {
 
 function upgrade() {
   if git -C "$LOCATION" diff-index --quiet HEAD --; then
-    nix flake update --commit-lock-file "$LOCATION"
+    nix flake update --commit-lock-file --flake "$LOCATION"
     apply $1
   else
     echo "Error: git working tree is dirty"
