@@ -22,7 +22,7 @@
     pkgs.yubikey-manager-qt
     pkgs.yubioath-flutter
     pkgs.gnupg
-    pkgs.pinentry-gnome
+    pkgs.pinentry-gnome3
   ];
 
   networking.firewall.checkReversePath = false; 

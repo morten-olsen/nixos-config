@@ -12,9 +12,11 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "dk";
-    xkbVariant = "";
-    xkbOptions = "caps:swapescape";
+    xkb = {
+      layout = "dk";
+      variant = "";
+      options = "caps:swapescape";
+    };
   };
 
   environment.systemPackages = [
