@@ -8,7 +8,7 @@
     isNormalUser = true;
     description = "Alice";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
   };
 
   users.users."alice".openssh.authorizedKeys.keys = [

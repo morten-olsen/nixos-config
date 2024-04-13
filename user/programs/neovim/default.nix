@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let 
   astronvim = builtins.fetchGit {
@@ -10,7 +10,12 @@ let
     rev = "295278f715810a2917e0eb38c304cfc290e796d7";
   };
 in {
-  programs.neovim.enable = true;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
   home.packages = [
     pkgs.marksman
   ];

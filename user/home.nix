@@ -9,7 +9,7 @@
     ./programs/terminal
     ./programs/kitty
     ./programs/firefox
-    ./programs/vscode
+    #./programs/vscode
   ];
 
   home.file = {
@@ -18,16 +18,7 @@
 
   home.stateVersion = "23.11";
   home.packages = [
-    pkgs.spotify
-    pkgs.slack
-    pkgs.darktable
-    pkgs.rawtherapee
     pkgs.signal-desktop
-    pkgs.gimp
-    pkgs.blender
-    pkgs.discord
-    pkgs.bun
-    pkgs.localsend
   ];
 
 

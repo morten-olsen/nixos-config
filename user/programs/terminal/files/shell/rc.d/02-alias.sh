@@ -28,7 +28,7 @@ command -v xsel > /dev/null || alias copy='xsel -ib'
 command -v urxvt > /dev/null || alias n="setsid urxvt &>/dev/null"
 
 alias sc="sudo systemctl"
-alias usermount="sudo mount -o gid=users,fmask=113,dmask=002"
+alias usermount="sudo mount -o gid=users,fmask=113,dmask=002,nolock"
 alias fzf="fzf --preview 'bat {} --line-range 0:100 --color always'"
 alias stmux="tmux a -t base || tmux new -s base" 
 

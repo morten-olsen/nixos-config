@@ -12,18 +12,23 @@
       extraArgs = [ "--env=LC_ALL=C" "--env=GTK_THEME=Adwaita:dark" ];
     };
   };
-
-  # yubikey stuff
-  services.udev.packages = [ pkgs.yubikey-personalization ];
+  
   environment.systemPackages = [
-    pkgs.yubikey-personalization
-    pkgs.yubikey-personalization-gui
-    pkgs.yubikey-manager
-    pkgs.yubikey-manager-qt
-    pkgs.yubioath-flutter
     pkgs.gnupg
     pkgs.pinentry-gnome3
   ];
+
+  # # yubikey stuff
+  # services.udev.packages = [ pkgs.yubikey-personalization ];
+  # environment.systemPackages = [
+  #   pkgs.yubikey-personalization
+  #   pkgs.yubikey-personalization-gui
+  #   pkgs.yubikey-manager
+  #   pkgs.yubikey-manager-qt
+  #   pkgs.yubioath-flutter
+  #   pkgs.gnupg
+  #   pkgs.pinentry-gnome3
+  # ];
 
   networking.firewall.checkReversePath = false; 
 }
