@@ -10,6 +10,19 @@ in
       name = "Launch console";
     };
 
+    "org/gnome/shell/extensions/dash-to-panel" = {
+      panel-positions = "{\"0\":\"BOTTOM\"}";
+      panel-sizes = "{\"0\":48}";
+      panel-lengths = "{\"0\":100}";
+      appicon-margin = 4;
+      animate-appicon-hover = true;
+      dot-style-focused = "METRO";
+      dot-style-unfocused = "DOTS";
+      trans-use-custom-opacity = true;
+      trans-panel-opacity = 0.0;
+      show-favorites = false;
+    };
+
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
