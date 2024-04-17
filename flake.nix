@@ -12,10 +12,13 @@
     home-manager = {
       url = "github:nix-community/home-manager";
     };
+    themes = {
+      url = "github:RGBCube/ThemeNix";
+    };
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, nur}: {
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, nur, themes }: {
     nixosConfigurations = {
       alice-xps = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

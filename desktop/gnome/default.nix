@@ -3,7 +3,11 @@
 {
   boot.plymouth = {
     enable = true;
-    theme = "breeze";
+    theme = "circle_hud";
+    themePackages = [
+      pkgs.breeze-plymouth
+      pkgs.adi1090x-plymouth-themes
+    ];
   };
 
   services = {
@@ -11,7 +15,10 @@
       enable = true;
       excludePackages = [ pkgs.xterm ];
 
-      displayManager.gdm.enable = true;
+      displayManager = {
+        gdm.enable = true;
+      };
+
       desktopManager.gnome = {
         enable = true;
       };
@@ -48,13 +55,14 @@
     systemPackages = [
       #pkgs.gnome.dconf-editor
       pkgs.plymouth
-      pkgs.breeze-plymouth
       pkgs.gnome.networkmanager-openconnect
       pkgs.numix-icon-theme
       pkgs.papirus-icon-theme
       pkgs.arc-icon-theme
+      pkgs.arc-theme
       pkgs.wl-clipboard
       pkgs.gnome.gnome-tweaks
+      pkgs.orchis
     ] ++ [
       #pkgs.alacritty # pkgs.gnome-console
       #pkgs.firefox # pkgs.gnome.epiphany
