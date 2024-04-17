@@ -3,6 +3,7 @@
 {
   boot.plymouth = {
     enable = true;
+    theme = "breeze";
   };
 
   services = {
@@ -41,10 +42,13 @@
 
 
   programs.dconf.enable = true;
+  boot.initrd.systemd.enable = true;
 
   environment = {
     systemPackages = [
       #pkgs.gnome.dconf-editor
+      pkgs.plymouth
+      pkgs.breeze-plymouth
       pkgs.gnome.networkmanager-openconnect
       pkgs.numix-icon-theme
       pkgs.papirus-icon-theme

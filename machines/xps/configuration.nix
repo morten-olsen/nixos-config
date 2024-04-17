@@ -31,7 +31,7 @@
     "/crypto_keyfile.bin" = null;
   };
 
-  boot.kernelParams = [ "i915.force_probe=9b41" ];
+  boot.kernelParams = [ "i915.force_probe=9b41" "quiet" ];
 
   networking.hostName = "alice-xps"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

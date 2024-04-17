@@ -1,15 +1,10 @@
 # Load all files from .shell/rc.d directory
 if [ -d $HOME/.shellrc/rc.d ]; then
   for file in $HOME/.shellrc/rc.d/*.sh; do
-    source $file
+    source $file || echo "Failed to source $file"
   done
-fi
 
-if [ -d $HOME/.shellrc/rc.d ]; then
   for file in $HOME/.shellrc/rc.d/*.bash; do
-    source $file
+    source $file || echo "Failed to source $file"
   done
 fi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
