@@ -10,7 +10,7 @@
     ./programs/kitty
     ./programs/firefox
     ./programs/devbox
-    #./programs/vscode
+    ./programs/vscode
   ];
 
   home.file = {
@@ -19,7 +19,7 @@
 
   home.stateVersion = "23.11";
   home.packages = with pkgs; [
-    signal-desktop
+    # signal-desktop
     gnomeExtensions.user-themes
     gnomeExtensions.tray-icons-reloaded
     gnomeExtensions.vitals

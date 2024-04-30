@@ -68,7 +68,7 @@
       #pkgs.firefox # pkgs.gnome.epiphany
     ];
 
-    sessionVariables.NIXOS_OZONE_WL = "1";
+    # sessionVariables.NIXOS_OZONE_WL = "1";
 
     gnome.excludePackages = [
       pkgs.gnome-connections
@@ -77,7 +77,7 @@
       pkgs.gnome-tour
       # pkgs.gnome.adwaita-icon-theme
       pkgs.gnome.epiphany
-      pkgs.gnome.evince
+      # pkgs.gnome.evince
       pkgs.gnome.file-roller
       pkgs.gnome.geary
       pkgs.gnome.gnome-backgrounds
@@ -94,7 +94,7 @@
       # pkgs.gnome.nautilus
       pkgs.gnome.simple-scan
       pkgs.gnome.sushi
-      pkgs.gnome.totem
+      # pkgs.gnome.totem
       pkgs.gnome.yelp
       pkgs.orca
     ];

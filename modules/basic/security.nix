@@ -5,13 +5,13 @@
   services.pcscd.enable = true;
   security.apparmor.enable = true;
   programs.firejail.enable = true;
-  programs.firejail.wrappedBinaries = {
-    signal-desktop = {
-      executable = "${pkgs.signal-desktop}/bin/signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
-      profile = "${pkgs.firejail}/etc/firejail/signal-desktop.profile";
-      extraArgs = [ "--env=LC_ALL=C" "--env=GTK_THEME=Adwaita:dark" ];
-    };
-  };
+  # programs.firejail.wrappedBinaries = {
+  #   signal-desktop = {
+  #     executable = "${pkgs.signal-desktop}/bin/signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland";
+  #     profile = "${pkgs.firejail}/etc/firejail/signal-desktop.profile";
+  #     extraArgs = [ "--env=LC_ALL=C" "--env=GTK_THEME=Adwaita:dark" ];
+  #   };
+  # };
   
   environment.systemPackages = [
     pkgs.gnupg

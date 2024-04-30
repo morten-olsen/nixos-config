@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
-{
+let
+  nvm = builtins.fetchGit {
+    url = "https://github.com/nvm-sh/nvm";
+    rev = "811c039e2b6fb305e6eb2269d7aa0d21eb067586";
+  };
+in {
   imports = [
     ../fzf
     ../direnv
@@ -56,6 +61,10 @@
     # ".npmrc".source = ./files/npmrc;
     ".shellrc/rc.d" = {
       source = ./files/shell/rc.d;
+    };
+    ".nvm" = {
+      source = nvm;
+      recursive = true;
     };
   };
 }
