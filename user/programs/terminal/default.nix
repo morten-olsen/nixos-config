@@ -51,6 +51,11 @@ in {
     yt-dlp.enable = true;
     starship = {
       enable = true;
+      settings = {
+        docker_context = {
+          disabled = true;
+        };
+      };
     };
   };
 

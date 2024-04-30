@@ -20,7 +20,7 @@
 
     # override nixos-hardware profile
     throttled.enable = false;
-    thermald.enable = true;
+    thermald.enable = false;
   };
 }
 
